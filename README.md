@@ -1,4 +1,4 @@
-# learnjava
+# java7
 
 Basic problem statement related to java along with the solution
 
