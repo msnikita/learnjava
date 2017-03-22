@@ -1,3 +1,15 @@
+/*
+Sample Input 1
+3
+3 2 1
+
+Sample Output 1
+Array is sorted in 3 swaps.
+First Element: 1
+Last Element: 3
+*/
+
+
 import java.io.*;
 import java.util.*;
 import java.text.*;
