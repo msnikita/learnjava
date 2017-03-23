@@ -23,4 +23,67 @@ Map<String, Integer> stringToIntMap = new LinkedHashMap<String, Integer>();
 
 Once a data type is specified and an object is created, the specified type replaces every ocurrence of the generic type parameter in the instantiated class. The compiler also performs strict type checking to ensure you haven't tried to do anything not allowable for that data type (e.g.: trying to add an element to integerList that isn't of type Integer). 
 
+Input (stdin)
+3
+1
+2
+3
+2
+Hello
+World
+
+Output:
+
+1
+2
+3
+Hello
+World
+
 */
+
+import java.util.*;
+
+class Printer <T> {
+
+   /**
+    *    Method Name: printArray
+    *    Print each element of the generic array on a new line. Do not return anything.
+    *    @param A generic array
+    **/
+    public static <E> void printArray(E[] generic){
+        for(E ele : generic) {
+            System.out.println(ele); 
+        }
+    }
+}
+
+public class Generics {
+    
+    public static void main(String args[]){
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        Integer[] intArray = new Integer[n];
+        for (int i = 0; i < n; i++) {
+            intArray[i] = scanner.nextInt();
+        }
+
+        n = scanner.nextInt();
+        String[] stringArray = new String[n];
+        for (int i = 0; i < n; i++) {
+            stringArray[i] = scanner.next();
+        }
+        
+       /*
+        * Important part of the code...
+        */
+        Printer<Integer> intPrinter = new Printer<Integer>();
+        Printer<String> stringPrinter = new Printer<String>();
+        intPrinter.printArray( intArray  );
+        stringPrinter.printArray( stringArray );
+        if(Printer.class.getDeclaredMethods().length > 1){
+            System.out.println("The Printer class should only have 1 method named printArray.");
+        }
+    } 
+}
+
